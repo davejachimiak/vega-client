@@ -71,8 +71,9 @@ describe 'VegaClient', ->
           name: 'Allie'
 
       message = JSON.stringify
-        type: 'offer'
-        payload: payload
+        data:
+          type: 'offer'
+          payload: payload
 
       offer1 = []
       offer2 = []

@@ -19,8 +19,9 @@ class VegaClient
 
   onmessage: (message) =>
     parsedMessage = JSON.parse message
-    type          = parsedMessage.type
-    payload       = parsedMessage.payload
+    data          = parsedMessage.data
+    type          = data.type
+    payload       = data.payload
 
     @trigger type, payload
 
