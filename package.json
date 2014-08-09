@@ -2,6 +2,7 @@
   "name": "vega_client",
   "version": "0.1.0",
   "license": "MIT",
+  "main":"index.js",
   "devDependencies": {
     "chai": "1.9.1",
     "mocha":"1.18.2",
