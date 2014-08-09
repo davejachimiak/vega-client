@@ -10,5 +10,8 @@
     "sinon":"1.9.1",
     "sinon-chai":"2.5.0",
     "uglify-js":"2.4.13"
+  },
+  "scripts": {
+    "test": "mocha-phantomjs test/test.html"
   }
 }
