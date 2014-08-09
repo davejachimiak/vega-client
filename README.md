@@ -11,7 +11,9 @@ vega-client is built in CoffeeScript. The relevant files are located at
 To install the development dependencies: `$ npm install`.
 
 To build the library: `$ npm build`
+
 To build the tests: `$ npm run built-test`
+
 To run the tests: `$ npm test`
 
 Running the tests builds the tests, the library, and the minified library.
