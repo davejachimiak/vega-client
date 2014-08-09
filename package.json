@@ -12,6 +12,8 @@
     "uglify-js":"2.4.13"
   },
   "scripts": {
-    "test": "mocha-phantomjs test/test.html"
+    "build":"coffee -o . -c coffee/vega-client.coffee && uglify vega-client.js -o vega-client.min.js",
+    "build-test":"coffee -o ./test -c test/coffee/vega-client-test.coffee",
+    "test":"npm build && npm build-test && mocha-phantomjs test/test.html"
   }
 }
