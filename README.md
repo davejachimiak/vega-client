@@ -3,6 +3,8 @@
 A drop-in WebRTC signaling client.
 Use with [VegaServer](https://github.com/davejachimiak/vega_server).
 
+[![Build Status](https://travis-ci.org/davejachimiak/vega-client.svg?branch=master)](https://travis-ci.org/davejachimiak/vega-client)
+
 ## Development
 
 vega-client is built in CoffeeScript. The relevant files are located at
