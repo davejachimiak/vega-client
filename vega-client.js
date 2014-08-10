@@ -115,6 +115,8 @@
 
   })();
 
-  window.VegaClient = VegaClient;
+  if (typeof window !== "undefined" && window !== null) {
+    window.VegaClient = VegaClient;
+  }
 
 }).call(this);

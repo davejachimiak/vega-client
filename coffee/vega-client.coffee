@@ -68,4 +68,4 @@ class VegaClient
       type: 'hangUp'
       payload: {}
 
-window.VegaClient = VegaClient
+window?.VegaClient = VegaClient
