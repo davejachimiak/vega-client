@@ -1,4 +1,4 @@
-class VegaClient
+class (exports ? window).VegaClient
   @send: (websocket, message) ->
     message     = JSON.stringify(message)
     sendMessage = => websocket.send message
@@ -67,5 +67,3 @@ class VegaClient
     VegaClient.send @websocket,
       type: 'hangUp'
       payload: {}
-
-window?.VegaClient = VegaClient

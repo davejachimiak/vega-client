@@ -1,1 +1,1 @@
-module.exports = require('./vega-client.js');
+module.exports = require('./vega-client').VegaClient;
