@@ -1,5 +1,5 @@
 {
-  "name": "vega_client",
+  "name": "vega-client",
   "version": "0.1.0",
   "license": "MIT",
   "main":"index.js",
