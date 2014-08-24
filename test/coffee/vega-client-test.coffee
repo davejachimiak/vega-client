@@ -70,10 +70,10 @@ describe 'VegaClient', ->
         peerBadge:
           name: 'Allie'
 
-      message = JSON.stringify
-        data:
-          type: 'offer'
-          payload: payload
+      data = JSON.stringify
+        type: 'offer'
+        payload: payload
+      message = { data: data }
 
       offer1 = []
       offer2 = []

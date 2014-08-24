@@ -18,10 +18,10 @@ class (exports ? window).VegaClient
     @websocket.onmessage = @onmessage
 
   onmessage: (message) =>
-    parsedMessage = JSON.parse message
-    data          = parsedMessage.data
-    type          = data.type
-    payload       = data.payload
+    data       = message.data
+    parsedData = JSON.parse data
+    type       = parsedData.type
+    payload    = parsedData.payload
 
     @trigger type, payload
 

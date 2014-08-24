@@ -89,7 +89,7 @@
     });
     describe('#onmessage', function() {
       return it('triggers callbacks set on the type and the payload', function() {
-        var message, offer1, offer2, payload;
+        var data, message, offer1, offer2, payload;
         payload = {
           offer: {},
           peerId: 'f4321169-131c-4ae9-93f5-177fafe02e59',
@@ -97,12 +97,13 @@
             name: 'Allie'
           }
         };
-        message = JSON.stringify({
-          data: {
-            type: 'offer',
-            payload: payload
-          }
+        data = JSON.stringify({
+          type: 'offer',
+          payload: payload
         });
+        message = {
+          data: data
+        };
         offer1 = [];
         offer2 = [];
         this.client.on('offer', (function(_this) {

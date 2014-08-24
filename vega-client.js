@@ -38,11 +38,11 @@
     }
 
     VegaClient.prototype.onmessage = function(message) {
-      var data, parsedMessage, payload, type;
-      parsedMessage = JSON.parse(message);
-      data = parsedMessage.data;
-      type = data.type;
-      payload = data.payload;
+      var data, parsedData, payload, type;
+      data = message.data;
+      parsedData = JSON.parse(data);
+      type = parsedData.type;
+      payload = parsedData.payload;
       return this.trigger(type, payload);
     };
 
