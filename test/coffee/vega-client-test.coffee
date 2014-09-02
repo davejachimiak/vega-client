@@ -93,6 +93,14 @@ describe 'VegaClient', ->
       expect(offer1).to.include payload
       expect(offer2).to.include payload
 
+  describe '#onerror', ->
+    it 'triggers an error event with the error', ->
+      trigger = sinon.collection.stub @client, 'trigger'
+
+      @client.onerror(error = new Object)
+
+      expect(trigger).to.have.been.calledWith 'websocketError', error
+
   describe 'messages to server', ->
     beforeEach ->
       @stubSendWith = (message) =>

@@ -19,6 +19,7 @@ class (exports ? window).VegaClient
     @websocket.onerror = @onerror
 
   onerror: (error) =>
+    @trigger 'websocketError', error
 
   onmessage: (message) =>
     data       = message.data

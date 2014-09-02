@@ -39,7 +39,9 @@
       this.websocket.onerror = this.onerror;
     }
 
-    VegaClient.prototype.onerror = function(error) {};
+    VegaClient.prototype.onerror = function(error) {
+      return this.trigger('websocketError', error);
+    };
 
     VegaClient.prototype.onmessage = function(message) {
       var data, parsedData, payload, type;

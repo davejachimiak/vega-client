@@ -125,6 +125,14 @@
         return expect(offer2).to.include(payload);
       });
     });
+    describe('#onerror', function() {
+      return it('triggers an error event with the error', function() {
+        var error, trigger;
+        trigger = sinon.collection.stub(this.client, 'trigger');
+        this.client.onerror(error = new Object);
+        return expect(trigger).to.have.been.calledWith('websocketError', error);
+      });
+    });
     return describe('messages to server', function() {
       beforeEach(function() {
         this.stubSendWith = (function(_this) {
