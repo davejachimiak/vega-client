@@ -16,6 +16,9 @@ class (exports ? window).VegaClient
     @websocket = new WebSocket(@url)
     @callbacks = {}
     @websocket.onmessage = @onmessage
+    @websocket.onerror = @onerror
+
+  onerror: (error) =>
 
   onmessage: (message) =>
     data       = message.data

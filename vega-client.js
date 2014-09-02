@@ -23,6 +23,7 @@
       this.roomId = roomId;
       this.badge = badge;
       this.onmessage = __bind(this.onmessage, this);
+      this.onerror = __bind(this.onerror, this);
       if (this.url === void 0) {
         throw new TypeError('url not provided');
       }
@@ -35,7 +36,10 @@
       this.websocket = new WebSocket(this.url);
       this.callbacks = {};
       this.websocket.onmessage = this.onmessage;
+      this.websocket.onerror = this.onerror;
     }
+
+    VegaClient.prototype.onerror = function(error) {};
 
     VegaClient.prototype.onmessage = function(message) {
       var data, parsedData, payload, type;

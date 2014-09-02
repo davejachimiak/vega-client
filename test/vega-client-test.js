@@ -53,10 +53,14 @@
     });
     describe('#constructor', function() {
       describe('arguments are satisfied', function() {
-        return it('sets the onmessage callback', function() {
-          var websocket;
-          websocket = this.client.websocket;
-          return expect(websocket.onmessage).to.equal(this.client.onmessage);
+        beforeEach(function() {
+          return this.websocket = this.client.websocket;
+        });
+        it('sets the onmessage callback', function() {
+          return expect(this.websocket.onmessage).to.equal(this.client.onmessage);
+        });
+        return it('sets the onerror callback', function() {
+          return expect(this.websocket.onerror).to.equal(this.client.onerror);
         });
       });
       describe('zero arguments are passed', function() {

@@ -45,10 +45,14 @@ describe 'VegaClient', ->
 
   describe '#constructor', ->
     describe 'arguments are satisfied', ->
-      it 'sets the onmessage callback', ->
-        websocket = @client.websocket
+      beforeEach ->
+        @websocket = @client.websocket
 
-        expect(websocket.onmessage).to.equal @client.onmessage
+      it 'sets the onmessage callback', ->
+        expect(@websocket.onmessage).to.equal @client.onmessage
+
+      it 'sets the onerror callback', ->
+        expect(@websocket.onerror).to.equal @client.onerror
 
     describe 'zero arguments are passed', ->
       it 'throws an error', ->
